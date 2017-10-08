@@ -7,7 +7,9 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [ ],
+      "assets": [
+        "demo/assets/cat300.jpg"
+      ],
       "index": "demo/index.html",
       "main": "demo/main.ts",
       "polyfills": "demo/polyfills.ts",
