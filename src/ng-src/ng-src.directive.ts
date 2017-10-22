@@ -3,14 +3,22 @@ import {
   Input,
   OnChanges,
   ViewContainerRef,
+  EventEmitter,
+  Output,
 } from '@angular/core';
 
 @Directive({
   // tslint:disable-next-line:directive-selector
-  selector: '[ngSrc]'
+  selector: '[ngSrc]img'
 })
 export class NgSrcDirective implements OnChanges {
   @Input() ngSrc: string;
+
+  @Output() ngOnLoad = new EventEmitter<XMLHttpRequest>();
+
+  get hostImage(): HTMLImageElement {
+    return this.view.element.nativeElement;
+  }
 
   constructor(private view: ViewContainerRef) { }
 
@@ -28,14 +36,19 @@ export class NgSrcDirective implements OnChanges {
     httpRequest.send();
   }
 
-  onRequestLoaded(ev: ProgressEvent): any {
+  private onRequestLoaded(ev: ProgressEvent): any {
     const request = ev.target as XMLHttpRequest;
 
     const arrayBufferView = new Uint8Array(request.response);
-    const blob = new Blob([ arrayBufferView ], { type: 'image/jpeg' });
+    const blob = new Blob([ arrayBufferView ], { type: this.getContentType(request) });
     const imageUrl = URL.createObjectURL(blob);
 
-    const imageTag = this.view.element.nativeElement as HTMLImageElement;
-    imageTag.src = imageUrl;
+    this.hostImage.src = imageUrl;
+
+    this.ngOnLoad.emit(request);
+  }
+
+  private getContentType(request: XMLHttpRequest) {
+    return request.getResponseHeader('content-type');
   }
 }

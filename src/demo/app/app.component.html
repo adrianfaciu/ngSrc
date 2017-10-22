@@ -1,9 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{title}}!
+    {{ title }}
   </h1>
   <img width="300"
-       [ngSrc]="'http://localhost:4200/demo/assets/cat300.jpg'">
+       [ngSrc]="'http://localhost:4200/demo/assets/cat300.jpg'"
+       (ngOnLoad)="exampleCallback($event)">
 </div>
 
