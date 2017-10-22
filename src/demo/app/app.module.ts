@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgxRetriableModule } from '../../retriable-src/retriable-src.module';
+import { NgSrcModule } from '../../ng-src/ng-src.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { NgxRetriableModule } from '../../retriable-src/retriable-src.module';
   ],
   imports: [
     BrowserModule,
-    NgxRetriableModule,
+    NgSrcModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

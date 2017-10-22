@@ -1,9 +1,0 @@
-{
-  "name": "ngx-retriable",
-  "version": "0.1.0",
-  "license": "MIT",
-  "peerDependencies": {
-    "@angular/common": "^4.2.4",
-    "@angular/core": "^4.2.4"
-  }
-}
