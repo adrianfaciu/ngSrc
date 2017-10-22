@@ -4,37 +4,30 @@ import {
   OnChanges,
   SimpleChanges,
   HostBinding,
+  ViewContainerRef,
 } from '@angular/core';
+
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Directive({
   // tslint:disable-next-line:directive-selector
-  selector: '[retriableSrc]'
+  selector: '[ngSrc]'
 })
 export class RetriableSrcDirective implements OnChanges {
-  // tslint:disable-next-line:no-input-rename
-  @Input('retriableSrc') sourceUrl;
+  @Input() ngSrc;
 
-  @HostBinding('src') imgSrc;
+  constructor(private view: ViewContainerRef) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.validateUrl(this.sourceUrl)) {
-      this.fetchImage(this.sourceUrl);
-    }
-  }
-
-  validateUrl(url: string) {
-    // todo validate the url
-    return true;
+    this.fetchImage(this.ngSrc);
   }
 
   fetchImage(url: string) {
-    console.log(url);
-
     const httpRequest = new XMLHttpRequest();
 
     httpRequest.open('GET', url, true);
     httpRequest.responseType = 'arraybuffer';
-    httpRequest.onload = this.onRequestLoaded;
+    httpRequest.onload = this.onRequestLoaded.bind(this);
 
     httpRequest.send();
   }
@@ -47,18 +40,10 @@ export class RetriableSrcDirective implements OnChanges {
     const blob = new Blob([ arrayBufferView ], { type: 'image/jpeg' });
     const imageUrl = URL.createObjectURL(blob);
 
-    this.imgSrc = imageUrl;
+    const imageTag = this.view.element.nativeElement as HTMLImageElement;
+    imageTag.src = imageUrl;
 
-    // Get the description from S3 metadata
-    // var desc = this.getResponseHeader('x-amz-meta-description');
-    // img.setAttribute('data-description', desc);
+    // To read headers for example...
+    // request.getResponseHeader()
   }
 }
-
-
-// Handle case when sourceUrl is not an URl
-
-// Should we load with XMLHttpRequest in order not to depend on HttpClient
-// Might make this optional and inject HttpClient or other service ?
-
-// Four spaces instead of two
