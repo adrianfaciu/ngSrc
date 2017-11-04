@@ -1,6 +1,6 @@
 {
-  "name": "ngx-retriable-src",
-  "version": "0.0.0",
+  "name": "ngx-src",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",

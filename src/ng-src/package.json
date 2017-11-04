@@ -1,7 +1,11 @@
 {
-  "name": "ng-src",
-  "version": "0.1.0",
+  "name": "ngx-src",
+  "version": "1.0.0",
   "license": "MIT",
+  "author": {
+    "name": "Adrian Faciu",
+    "email": "adrian.faciu@gmail.com"
+  },
   "peerDependencies": {
     "@angular/common": "^4.2.4",
     "@angular/core": "^4.2.4"
