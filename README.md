@@ -1,27 +1,75 @@
-# NgxRetriableSrc
+# NgxSrc
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.4.
+One Paragraph of project description goes here
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-## Code scaffolding
+### Prerequisites
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+What things you need to install the software and how to install them
 
-## Build
+```
+Give examples
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+### Installing
 
-## Running unit tests
+A step by step series of examples that tell you have to get a development env running
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Say what the step will be
 
-## Running end-to-end tests
+```
+Give the example
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+And repeat
 
-## Further help
+```
+until finished
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+End with an example of getting some data out of the system or using it for a little demo
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Contributing
+
+Please read [CONTRIBUTING.md]
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/adrianfaciu/ngrxsrc/tags). 
+
+## Authors
+
+* **Adrian Faciu** - *Initial work*
+
+See also the list of [contributors](https://github.com/adrianfaciu/ngxsrc/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
