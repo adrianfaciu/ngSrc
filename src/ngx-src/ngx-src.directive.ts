@@ -11,7 +11,7 @@ import {
   // tslint:disable-next-line:directive-selector
   selector: '[ngxSrc]img'
 })
-export class NgSrcDirective implements OnChanges {
+export class NgxSrcDirective implements OnChanges {
   @Input() ngxSrc: string;
 
   @Output() ngxOnLoad = new EventEmitter<XMLHttpRequest>();

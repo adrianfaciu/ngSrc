@@ -1,8 +1,8 @@
-import { NgSrcDirective } from './ng-src.directive';
+import { NgxSrcDirective } from './ngx-src.directive';
 
 describe('RetriableSrcDirective', () => {
   it('should create an instance', () => {
-    const directive = new NgSrcDirective(null);
+    const directive = new NgxSrcDirective(null);
     expect(directive).toBeTruthy();
   });
 });

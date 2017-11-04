@@ -11,6 +11,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitAny": true,
+    "baseUrl": "./src",
     "typeRoots": [
       "node_modules/@types"
     ],
