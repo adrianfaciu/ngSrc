@@ -9,12 +9,12 @@ import {
 
 @Directive({
   // tslint:disable-next-line:directive-selector
-  selector: '[ngSrc]img'
+  selector: '[ngxSrc]img'
 })
 export class NgSrcDirective implements OnChanges {
-  @Input() ngSrc: string;
+  @Input() ngxSrc: string;
 
-  @Output() ngOnLoad = new EventEmitter<XMLHttpRequest>();
+  @Output() ngxOnLoad = new EventEmitter<XMLHttpRequest>();
 
   get hostImage(): HTMLImageElement {
     return this.view.element.nativeElement;
@@ -23,7 +23,7 @@ export class NgSrcDirective implements OnChanges {
   constructor(private view: ViewContainerRef) { }
 
   ngOnChanges(): void {
-    this.fetchImage(this.ngSrc);
+    this.fetchImage(this.ngxSrc);
   }
 
   fetchImage(url: string) {
@@ -45,7 +45,7 @@ export class NgSrcDirective implements OnChanges {
 
     this.hostImage.src = imageUrl;
 
-    this.ngOnLoad.emit(request);
+    this.ngxOnLoad.emit(request);
   }
 
   private getContentType(request: XMLHttpRequest) {
