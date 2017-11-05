@@ -1,64 +1,74 @@
 # NgxSrc
 
-One Paragraph of project description goes here
+Small Angular directive that loads images using XHR and exposes the request.
 
-## Getting Started
+Usefull for cases when we need to get additional information like headers set by the server.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The image is requested from the server as arraybuffer and a blob is created from the response. A local url is created with createObjectURL and this is set as src for the image tag.
 
-### Prerequisites
+## Installing
 
-What things you need to install the software and how to install them
-
+Use npm or yarn to install
 ```
-Give examples
+npm install ngx-src --save
 ```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
+or
 ```
-Give the example
+yarn add ngx-src --prod
 ```
+## Using
 
-And repeat
-
+Import NgxSrcModule and add it to the imports array of your app module
 ```
-until finished
-```
+import { NgxSrcModule } from 'ngx-src';
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+@NgModule({
+  imports: [
+    NgxSrcModule,
+  ],
+})
+export class AppModule { }
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
+You now can use the ngxSrc directive on image tags inside your application
 ```
-Give an example
+ <img width="300"
+      [ngxSrc]="'http://localhost:4200/demo/assets/cat300.jpg'"
+      (ngxOnLoad)="exampleCallback($event)">
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+The directive exposes ngxOnLoad event that is triggered when the image is loaded and gets as argument the XMLHttpRequest object. One can use this to get any additional information required like the headers
+```
+  exampleCallback(request: XMLHttpRequest) {
+    console.log(request.getAllResponseHeaders());
+  }
+```
 
 ## Contributing
 
-Please read [CONTRIBUTING.md]
+Clone this repository
+```
+git clone https://github.com/adrianfaciu/ngrxsrc
+```
+And install all dependencies
+```
+yarn install
+```
+or
+```
+npm install
+```
+Source code is inside src/ngx-src and a demo application is found inside src/demo.
+
+### Scripts
+- ```build:lib``` will build and bundle the lib package using ng-packar
+- ```serve:demo``` will serve the demo application
+- ```test``` will execute the tests
+- ```e2e``` will execute end to end tests
+- ```lint``` will run the linter on the source code
+
+All these scripts can be used with ```npm run scriptName``` or ```yarn scriptName```
+
 
 ## Versioning
 
