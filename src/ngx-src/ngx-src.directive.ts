@@ -8,7 +8,6 @@ import {
 } from '@angular/core';
 
 @Directive({
-  // tslint:disable-next-line:directive-selector
   selector: '[ngxSrc]img'
 })
 export class NgxSrcDirective implements OnChanges {
@@ -26,7 +25,7 @@ export class NgxSrcDirective implements OnChanges {
     this.fetchImage(this.ngxSrc);
   }
 
-  fetchImage(url: string) {
+  private fetchImage(url: string) {
     const httpRequest = new XMLHttpRequest();
 
     httpRequest.open('GET', url, true);
@@ -39,13 +38,21 @@ export class NgxSrcDirective implements OnChanges {
   private onRequestLoaded(ev: ProgressEvent): any {
     const request = ev.target as XMLHttpRequest;
 
-    const arrayBufferView = new Uint8Array(request.response);
-    const blob = new Blob([ arrayBufferView ], { type: this.getContentType(request) });
-    const imageUrl = URL.createObjectURL(blob);
-
-    this.hostImage.src = imageUrl;
+    const imageUrl = this.createLocalResource(request);
+    this.setImageSource(imageUrl);
 
     this.ngxOnLoad.emit(request);
+  }
+
+  private createLocalResource(request: XMLHttpRequest) {
+    const arrayBufferView = new Uint8Array(request.response);
+    const blob = new Blob([ arrayBufferView ], { type: this.getContentType(request) });
+
+    return URL.createObjectURL(blob);
+  }
+
+  private setImageSource(url: string) {
+    this.hostImage.src = url;
   }
 
   private getContentType(request: XMLHttpRequest) {

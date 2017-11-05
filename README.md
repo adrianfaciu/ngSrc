@@ -61,13 +61,13 @@ npm install
 Source code is inside src/ngx-src and a demo application is found inside src/demo.
 
 ### Scripts
-- ```build:lib``` will build and bundle the lib package using ng-packar
-- ```serve:demo``` will serve the demo application
-- ```test``` will execute the tests
-- ```e2e``` will execute end to end tests
-- ```lint``` will run the linter on the source code
+- ```build:lib```   - build and bundle the lib package using ng-packar
+- ```serve:demo```  - serve the demo application
+- ```test```        - execute the tests
+- ```e2e```         - execute end to end tests
+- ```lint```        - run the linter on the source code
 
-All these scripts can be used with ```npm run scriptName``` or ```yarn scriptName```
+All these scripts can be used with ```npm run scriptName``` or ```yarn scriptName```.
 
 
 ## Versioning
@@ -82,4 +82,4 @@ See also the list of [contributors](https://github.com/adrianfaciu/ngxsrc/contri
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
