@@ -1,10 +1,11 @@
 {
   "name": "ng-src",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "build:lib": "ng-packagr -p ng-package.json",
+    "postbuild:lib": "cp README.md ./dist",
     "serve:demo": "ng serve",
     "test": "ng test",
     "test:ci": "ng test --single-run --browsers ChromeHeadless",

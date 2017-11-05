@@ -1,6 +1,6 @@
 {
   "name": "ng-src",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "description": "Small angular directive to load images with XHR and expose the request",
   "author": {
