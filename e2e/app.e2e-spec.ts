@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('ngx-retriable-src App', () => {
+describe('ng-src demo', () => {
   let page: AppPage;
 
   beforeEach(() => {

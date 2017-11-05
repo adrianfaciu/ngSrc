@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NgxSrcModule } from '../../ngx-src/ngx-src.module';
+import { NgSrcModule } from '../../ng-src/ng-src.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,7 @@ import { NgxSrcModule } from '../../ngx-src/ngx-src.module';
   ],
   imports: [
     BrowserModule,
-    NgxSrcModule,
+    NgSrcModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

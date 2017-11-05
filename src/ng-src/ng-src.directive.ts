@@ -8,12 +8,12 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[ngxSrc]img'
+  selector: '[ngSrc]img'
 })
-export class NgxSrcDirective implements OnChanges {
-  @Input() ngxSrc: string;
+export class NgSrcDirective implements OnChanges {
+  @Input() ngSrc: string;
 
-  @Output() ngxOnLoad = new EventEmitter<XMLHttpRequest>();
+  @Output() ngOnLoad = new EventEmitter<XMLHttpRequest>();
 
   get hostImage(): HTMLImageElement {
     return this.view.element.nativeElement;
@@ -22,7 +22,7 @@ export class NgxSrcDirective implements OnChanges {
   constructor(private view: ViewContainerRef) { }
 
   ngOnChanges(): void {
-    this.fetchImage(this.ngxSrc);
+    this.fetchImage(this.ngSrc);
   }
 
   private fetchImage(url: string) {
@@ -41,7 +41,7 @@ export class NgxSrcDirective implements OnChanges {
     const imageUrl = this.createLocalResource(request);
     this.setImageSource(imageUrl);
 
-    this.ngxOnLoad.emit(request);
+    this.ngOnLoad.emit(request);
   }
 
   private createLocalResource(request: XMLHttpRequest) {

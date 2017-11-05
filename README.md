@@ -1,6 +1,8 @@
-[![Build Status](https://travis-ci.org/adrianfaciu/ngxSrc.svg?branch=master)](https://travis-ci.org/adrianfaciu/ngxSrc)
+[![Build Status](https://travis-ci.org/adrianfaciu/ngSrc.svg?branch=master)](https://travis-ci.org/adrianfaciu/ngSrc)
 
-# NgxSrc
+[![NPM](https://nodei.co/npm/ng-src.png?compact=true)](https://npmjs.org/package/ng-src)
+
+# NgSrc
 
 Small Angular directive that loads images using XHR and exposes the request.
 
@@ -12,34 +14,34 @@ The image is requested from the server as arraybuffer and a blob is created from
 
 Use npm or yarn to install
 ```
-npm install ngx-src --save
+npm install ng-src --save
 ```
 or
 ```
-yarn add ngx-src --prod
+yarn add ng-src --prod
 ```
 ## Using
 
-Import NgxSrcModule and add it to the imports array of your app module
+Import NgSrcModule and add it to the imports array of your app module
 ```
-import { NgxSrcModule } from 'ngx-src';
+import { NgSrcModule } from 'ng-src';
 
 @NgModule({
   imports: [
-    NgxSrcModule,
+    NgSrcModule,
   ],
 })
 export class AppModule { }
 ```
 
-You now can use the ngxSrc directive on image tags inside your application
+You now can use the ngSrc directive on image tags inside your application
 ```
  <img width="300"
-      [ngxSrc]="'http://localhost:4200/demo/assets/cat300.jpg'"
-      (ngxOnLoad)="exampleCallback($event)">
+      [ngSrc]="'http://localhost:4200/demo/assets/cat300.jpg'"
+      (ngOnLoad)="exampleCallback($event)">
 ```
 
-The directive exposes ngxOnLoad event that is triggered when the image is loaded and gets as argument the XMLHttpRequest object. One can use this to get any additional information required like the headers
+The directive exposes ngOnLoad event that is triggered when the image is loaded and gets as argument the XMLHttpRequest object. One can use this to get any additional information required like the headers
 ```
   exampleCallback(request: XMLHttpRequest) {
     console.log(request.getAllResponseHeaders());
@@ -50,7 +52,7 @@ The directive exposes ngxOnLoad event that is triggered when the image is loaded
 
 Clone this repository
 ```
-git clone https://github.com/adrianfaciu/ngxsrc
+git clone https://github.com/adrianfaciu/ngsrc
 ```
 And install all dependencies
 ```
@@ -60,7 +62,7 @@ or
 ```
 npm install
 ```
-Source code is inside src/ngx-src and a demo application is found inside src/demo.
+Source code is inside src/ng-src and a demo application is found inside src/demo.
 
 ### Scripts
 - ```build:lib```   - build and bundle the lib package using ng-packar
@@ -74,14 +76,14 @@ All these scripts can be used with ```npm run scriptName``` or ```yarn scriptNam
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/adrianfaciu/ngxsrc/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/adrianfaciu/ngsrc/tags). 
 
 ## Authors
 
 * **Adrian Faciu** - *Initial work*
 
-See also the list of [contributors](https://github.com/adrianfaciu/ngxsrc/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/adrianfaciu/ngsrc/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.

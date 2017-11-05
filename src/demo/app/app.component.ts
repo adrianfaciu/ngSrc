@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'ngxSrc sample';
+  title = 'ngSrc sample';
 
   exampleCallback(request: XMLHttpRequest) {
     console.log(request.getAllResponseHeaders());

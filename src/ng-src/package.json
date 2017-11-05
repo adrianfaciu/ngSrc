@@ -1,5 +1,5 @@
 {
-  "name": "ngx-src",
+  "name": "ng-src",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Small angular directive to load images with XHR and expose the request",
@@ -12,6 +12,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adrianfaciu/ngxsrc.git"
+    "url": "https://github.com/adrianfaciu/ngsrc.git"
   }
 }
