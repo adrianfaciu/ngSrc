@@ -48,7 +48,7 @@ The directive exposes ngxOnLoad event that is triggered when the image is loaded
 
 Clone this repository
 ```
-git clone https://github.com/adrianfaciu/ngrxsrc
+git clone https://github.com/adrianfaciu/ngxsrc
 ```
 And install all dependencies
 ```
@@ -72,7 +72,7 @@ All these scripts can be used with ```npm run scriptName``` or ```yarn scriptNam
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/adrianfaciu/ngrxsrc/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/adrianfaciu/ngxsrc/tags). 
 
 ## Authors
 
