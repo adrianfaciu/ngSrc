@@ -36,8 +36,7 @@ export class AppModule { }
 
 You now can use the ngSrc directive on image tags inside your application
 ```
- <img width="300"
-      [ngSrc]="'http://localhost:4200/demo/assets/cat300.jpg'"
+ <img [ngSrc]="'http://localhost:4200/demo/assets/cat300.jpg'"
       (ngOnLoad)="exampleCallback($event)">
 ```
 
@@ -86,4 +85,4 @@ See also the list of [contributors](https://github.com/adrianfaciu/ngsrc/contrib
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
