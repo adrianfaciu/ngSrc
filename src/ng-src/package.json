@@ -3,6 +3,12 @@
   "version": "1.0.1",
   "license": "MIT",
   "description": "Small angular directive to load images with XHR and expose the request",
+  "keywords": [
+    "angular",
+    "image",
+    "xhr",
+    "directive"
+  ],
   "author": {
     "name": "Adrian Faciu",
     "email": "adrian.faciu@gmail.com"
