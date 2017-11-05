@@ -67,7 +67,6 @@ Source code is inside src/ng-src and a demo application is found inside src/demo
 - ```build:lib```   - build and bundle the lib package using ng-packar
 - ```serve:demo```  - serve the demo application
 - ```test```        - execute the tests
-- ```e2e```         - execute end to end tests
 - ```lint```        - run the linter on the source code
 
 All these scripts can be used with ```npm run scriptName``` or ```yarn scriptName```.

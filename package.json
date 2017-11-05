@@ -9,8 +9,7 @@
     "serve:demo": "ng serve",
     "test": "ng test",
     "test:ci": "ng test --single-run --browsers ChromeHeadless",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {

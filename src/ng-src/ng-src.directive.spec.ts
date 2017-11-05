@@ -14,7 +14,7 @@ import { NgSrcModule } from './ng-src.module';
   `
 })
 class TestHostComponent {
-  imageSource = 'foo.png';
+  imageSource = 'http://localhost:4200/demo/assets/cat300.jpg';
 
   imageLoaded(request: XMLHttpRequest) {
     console.log(request.getAllResponseHeaders());
@@ -40,6 +40,8 @@ describe('ng-src directive', () => {
 
     directiveElement = fixture.debugElement.query(By.directive(NgSrcDirective));
     directiveInstance = directiveElement.injector.get(NgSrcDirective);
+
+    spyOn(componentInstance, 'imageLoaded');
   });
 
   it('should create an instance', () => {
@@ -54,5 +56,13 @@ describe('ng-src directive', () => {
 
     expect(directiveElement).toBeDefined();
     expect(directiveInstance).toBeDefined();
+  });
+
+  xit('will load image', () => {
+    expect(directiveElement.nativeElement.src).toBe(componentInstance.imageSource);
+  });
+
+  xit('will trigger loaded event', () => {
+    expect(componentInstance.imageLoaded).toHaveBeenCalled();
   });
 });
