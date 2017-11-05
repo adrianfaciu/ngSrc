@@ -8,7 +8,6 @@
     "email": "adrian.faciu@gmail.com"
   },
   "peerDependencies": {
-    "@angular/common": "^4.2.4",
     "@angular/core": "^4.2.4"
   },
   "repository": {
